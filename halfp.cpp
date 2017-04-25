@@ -187,12 +187,7 @@ halfp halfp::rsqrt(int order) const
 {
     halfp dst;
 
-#if 1
     dst.m_data.raw = (22 << 10) | 0x1BE;
-#else
-    dst.m_data.mantissa = 936;
-    dst.m_data.exponent = (15 * 2 - 1) << 10;
-#endif
     dst.m_data.raw -= (m_data.raw & ~(1 << 15)) >> 1;
     dst.m_data.raw |= m_data.raw & (1 << 15);
 

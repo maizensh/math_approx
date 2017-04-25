@@ -23,13 +23,14 @@ void test_number(halfp const& x)
     std::cout << "fixed point 4: " << (x.round(4) >> 4) << '.' << ((x.round(4) & 15) / 16.f)*10000 << std::endl;
 
     std::cout << "exp2: " << x.exp2() << std::endl;
+    std::cout << "log2: " << x.log2() << std::endl;
 
     std::cout << std::endl;
 }
 
 int main()
 {
-    float nums[] = { 19.560047f , 0.45123f, 13.54389573984f, 17.f };
+    float nums[] = { 0.45123f, 19.560047f , 13.54389573984f, 17.f, 5, 5.6f };
 
     for (auto num : nums)
         test_number(num);
